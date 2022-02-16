@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "c9e75da1-ec70-4e6c-96a2-abeaa87ffe60",
+		"name": "ServerlessCdkCognito",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Attendance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{id-token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://{{lambda-prefix}}.execute-api.us-east-1.amazonaws.com/prod/attendance",
+					"protocol": "https",
+					"host": [
+						"{{lambda-prefix}}",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"attendance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Attendance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{id-token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"02/20/2022\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{lambda-prefix}}.execute-api.us-east-1.amazonaws.com/prod/attendance",
+					"protocol": "https",
+					"host": [
+						"{{lambda-prefix}}",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"attendance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Attendance",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{id-token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"02/20/2022\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{lambda-prefix}}.execute-api.us-east-1.amazonaws.com/prod/attendance",
+					"protocol": "https",
+					"host": [
+						"{{lambda-prefix}}",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"attendance"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
