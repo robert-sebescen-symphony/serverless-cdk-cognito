@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { BlogCdkCognitoStack } from '../lib/blog-cdk-cognito-stack';
+import { MyPipelineStack } from '../lib/pipeline/pipeline-stack';
 
 const app = new cdk.App();
-new BlogCdkCognitoStack(app, 'BlogCdkCognitoStack', {});
+new MyPipelineStack(app, 'BlogCdkCognitoStack');
+// new BlogCdkCognitoStack(app, 'BlogCdkCognitoStack', {});
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
