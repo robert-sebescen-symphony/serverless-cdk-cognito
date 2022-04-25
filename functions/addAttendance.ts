@@ -11,7 +11,7 @@ export const handler: APIGatewayProxyWithCognitoAuthorizerHandler = async (
   const date = new Date(body.date);
 
   var params = {
-    TableName: "attendanceTable",
+    TableName: process.env.TABLE_NAME as string,
     Item: {
       Date: date.toDateString(),
       Email: email,

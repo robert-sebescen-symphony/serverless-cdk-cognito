@@ -12,13 +12,13 @@ export class BlogCdkCognitoStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    // lambdas
-    const getAttendance = createLambda(this, "getAttendance");
-    const addAttendance = createLambda(this, "addAttendance");
-    const removeAttendance = createLambda(this, "removeAttendance");
-
     // db
     const dynamoDb = dynamoDbSetup(this);
+
+    // lambdas
+    const getAttendance = createLambda(this, "getAttendance", dynamoDb.tableName);
+    const addAttendance = createLambda(this, "addAttendance", dynamoDb.tableName);
+    const removeAttendance = createLambda(this, "removeAttendance", dynamoDb.tableName);
 
     // db access for lambda
     dynamoDb.grantReadData(getAttendance);

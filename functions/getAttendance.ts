@@ -12,7 +12,7 @@ export const handler: APIGatewayProxyWithCognitoAuthorizerHandler = async (
     new Date(event.queryStringParameters.date as string);
 
   var params: DynamoDB.DocumentClient.QueryInput = {
-    TableName: "attendanceTable",
+    TableName: process.env.TABLE_NAME as string,
     KeyConditionExpression:
       "#dateKey = :dateValue AND #emailKey = :emailValue",
     ExpressionAttributeNames: { "#dateKey": "Date", "#emailKey": "Email" },

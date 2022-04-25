@@ -11,7 +11,6 @@ export function dynamoDbSetup(stack: Stack) {
       name: "Email",
       type: dynamodb.AttributeType.STRING,
     },
-    tableName: "attendanceTable",
     billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
   });
 }

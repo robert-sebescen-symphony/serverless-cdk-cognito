@@ -4,7 +4,7 @@ import * as cdk from 'aws-cdk-lib';
 import { MyPipelineStack } from '../lib/pipeline/pipeline-stack';
 
 const app = new cdk.App();
-new MyPipelineStack(app, 'BlogCdkCognitoStack');
+new MyPipelineStack(app, 'CdkPipelineStack');
 // new BlogCdkCognitoStack(app, 'BlogCdkCognitoStack', {});
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,

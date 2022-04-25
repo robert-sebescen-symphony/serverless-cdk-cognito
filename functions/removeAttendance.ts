@@ -11,7 +11,7 @@ export const handler: APIGatewayProxyWithCognitoAuthorizerHandler = async (
   const date = new Date(body.date);
 
   var params: DynamoDB.DocumentClient.DeleteItemInput = {
-    TableName: "attendanceTable",
+    TableName: process.env.TABLE_NAME as string,
     Key: {
         Date: date.toDateString(),
         Email: email
